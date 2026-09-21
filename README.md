@@ -1,3 +1,4 @@
+Markdown
 # Taller: Ley de Amdahl y Validación de Recursos
 
 **Curso:** Fundamentos de Computación Paralela y Distribuida  
@@ -18,3 +19,18 @@ Para compilar y ejecutar estos archivos correctamente, es necesario contar con u
 **Compilación:**
 ```bash
 gcc primes_number_sequential.c -o primes_number_sequential
+Ejecución en Windows:
+
+PowerShell
+.\primes_number_sequential.exe
+2. Versión Paralela (OpenMP)
+Compilación:
+
+Bash
+gcc -fopenmp primes_number_parallel.c -o primes_number_parallel
+Ejecución variando hilos (Windows PowerShell):
+Para cambiar la cantidad de hilos lógicos asignados a la ejecución del programa, se debe modificar la variable de entorno antes de la ejecución:
+
+PowerShell
+$env:OMP_NUM_THREADS=4; .\primes_number_parallel.exe
+(Nota: Reemplazar el número 4 por la cantidad de hilos que se deseen evaluar, por ejemplo: 1, 2, 4, 6 o 12).
